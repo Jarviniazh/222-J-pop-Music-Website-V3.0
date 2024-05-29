@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Artist</title>
+    <link rel="stylesheet" href="./css/formstyle.css" type="text/css" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a id="back" href="./index.html"
+          >GO BACK<span class="material-symbols-outlined"> undo </span></a
+        >
+      </nav>
+      <div class="logo">
+        <img id="logo-image" src="./image/logo.png" alt="logo" />
+        <h1 id="logo-text">J-Pop Music 12 GO!</h1>
+      </div>
+      <h4><span id="slogan">Your ultimate destination for all things J-Pop!!</span></h4>
+    </header>
+
+    <main>
+      <form id="add-artist-form" action="https://httpbin.org/post" method="post">
+        <!-- Form Title -->
+        <h2 id="add-artist-header">Artist You Want To Add</h2>
+
+        <!-- Artist name -->
+        <div class="form-row">
+          <label for="artistname"><span class="required">*</span> Artist Name</label>
+          <input
+            id="artistname"
+            name="artistname"
+            autocomplete="name"
+            type="text"
+            placeholder="Enter Artist Name..."
+            autofocus
+            tabindex="1"
+            required
+          />
+        </div>
+
+        <!-- -	Music Genre, which should use a <datalist> for autocomplete with 10 pre-defined musical genres.  Allow the user to specify a different genre if the one they want isn’t available -->
+        <div class="form-row">
+          <label for="genre"><span class="required">*</span> Genre</label>
+          <input
+            id="genre"
+            name="genre"
+            placeholder="Select a genre..."
+            list="genre-lists"
+            type="text"
+            required
+            tabindex="2"
+          />
+          <datalist id="genre-lists">
+            <option value="J-Pop"></option>
+            <option value="Country"></option>
+            <option value="Classic"></option>
+            <option value="K-Pop"></option>
+            <option value="Blues"></option>
+            <option value="Dance"></option>
+            <option value="Hard Rock"></option>
+            <option value="Hip Pop"></option>
+            <option value="Jazz"></option>
+            <option value="R&B"></option>
+            <option value="Other"></option>
+          </datalist>
+          <div id="otherGenre"></div>
+        </div>
+
+        <!-- - Multiple URLs (support any number) for their social media. Use a single `input` element for all URLs -->
+        <div class="form-row">
+          <label for="artist-url"><span class="required">*</span> Social Media Links</label>
+          <textarea
+            id="artist-url"
+            class="url"
+            name="artist-url"
+            autocomplete="url"
+            rows="2"
+            placeholder="Enter Social Media URL. Press Enter for aadd a new URL"
+            required
+            tabindex="3"
+          ></textarea>
+        </div>
+
+        <!-- - Multiple URLs (support any number) for example songs and videos by this artist. Show one `input` element and have an `Add` button that dynamically adds another `input` element below it, so the user can include as many song/video links as they want. -->
+        <div class="form-row">
+          <label for="song-url"><span class="required">*</span> Song Links</label>
+          <div id="test">
+            <input
+              id="song-url"
+              class="url"
+              type="url"
+              name="song-url"
+              autocomplete="url"
+              placeholder="Enter a URL"
+              required
+              tabindex="4"
+            />
+            <button id="addSongButton" type="button">
+              <span class="material-symbols-outlined"> add </span>
+            </button>
+          </div>
+          <div id="addLinks"></div>
+        </div>
+
+        <!-- -	A checkbox to specify if the artist’s music includes explicit lyrics -->
+        <div class="checkbox-row">
+          <span id="explicit-text"><span class="required">*</span> Explicit Lyrics?</span>
+          <label class="switch">
+            <input type="checkbox" id="explicit-lyrics" name="explicit" value="1" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <!-- -	A description of why the user thinks this artist should be added (arbitrarily long text) -->
+        <div class="form-row">
+          <label for="reason"> More Details...</label>
+          <textarea
+            id="reason"
+            name="reason"
+            rows="5"
+            placeholder="Why you recommend us to add this artist?"
+            tabindex="6"
+          ></textarea>
+        </div>
+
+        <div class="buttons">
+          <input id="submit" type="submit" name="submit" value="Submit" tabindex="7" />
+          <input id="reset" type="reset" name="reset" value="Reset" tabindex="8" />
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <cite
+        >Backgroud Image by
+        <a
+          href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >Annie Spratt</a
+        >
+        on
+        <a
+          href="https://unsplash.com/photos/an-abstract-painting-with-orange-and-blue-colors-0ZPSX_mQ3xI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >Unsplash</a
+        >
+      </cite>
+    </footer>
+
+    <!-- JavaScript for validation  -->
+    <script src="./js/form.js"></script>
+  </body>
+</html>

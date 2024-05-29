@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=500, initial-scale=1" />
+
+    <!-- Change this to your name-->
+    <meta name="author" content="Jarvinia Zhao" />
+
+    <title>WEB222 Music App</title>
+    <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="mainContent">
+      <header>
+        <!-- Change this to your App's info -->
+        <div class="logo">
+          <img id="logo-image" src="./image/logo.png" alt="logo" />
+          <h1 id="logo-text">J-Pop Music 12 GO!</h1>
+        </div>
+
+        <h4><span id="slogan">Your ultimate destination for all things J-Pop!!</span></h4>
+      </header>
+
+      <nav id="menu">
+        <!-- Dynamically create your menu category buttons here -->
+      </nav>
+
+      <main>
+        <h2 id="selected-artist">
+          <!-- Dynamically update the selected category title -->
+        </h2>
+        <div id="songlist" class="row"></div>
+      </main>
+    </div>
+
+    <footer>
+      <div id="credit">
+        <cite
+          >Backgroud Image by
+          <a
+            href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Annie Spratt</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/an-abstract-painting-with-orange-and-blue-colors-0ZPSX_mQ3xI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
+          >
+        </cite>
+      </div>
+
+      <!-- Create a footer in your main page and include a simple form that allows the user to sign up for a newsletter. Make sure that the user can’t submit invalid data. -->
+      <form id="signup" action="https://httpbin.org/post" method="post">
+        <h4>Want to sign up for our newsletter?</h4>
+        <div id="signup-input">
+          <input
+            id="email"
+            type="email"
+            placeholder="   Enter your email address here..."
+            name="email"
+            required
+          />
+          <input id="signupButton" type="submit" name="submit" value="SIGN UP" />
+        </div>
+      </form>
+    </footer>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/artists.js"></script>
+    <script src="./js/songs.js"></script>
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/b1991fbc4d.js" crossorigin="anonymous"></script>
+    <!-- Main App JavaScript File -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
